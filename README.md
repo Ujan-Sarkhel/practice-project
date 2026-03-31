@@ -103,33 +103,10 @@ __Prediction Response (JSON)__<br>
 }
 ```
 
-## 🛠️__Setup Instructions__
-
-### __1. Clone Repository__
-
-```bash
-git clone <repo-link>
-cd project-folder
-```
-
-### __2. Backend Link__
+## 🔗__Link For The App__
 
 ```
-https://practice-project-v4en.onrender.com/
-```
-
-### __3. Frontend Setup__
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-### __Open:__
-
-```
-http://localhost:3000
+https://pandemic-gamma.vercel.app/
 ```
 
 ## 📁 __Project Structure__

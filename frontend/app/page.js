@@ -45,7 +45,7 @@ export default function Page() {
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.18),_transparent_32%),radial-gradient(circle_at_85%_12%,_rgba(16,185,129,0.16),_transparent_24%),linear-gradient(160deg,_#07111f_0%,_#0b1b2f_42%,_#061018_100%)] px-6 pb-16 pt-32 text-white selection:bg-green-500/50">
+    <main className="scroll-smooth relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.18),_transparent_32%),radial-gradient(circle_at_85%_12%,_rgba(16,185,129,0.16),_transparent_24%),linear-gradient(160deg,_#07111f_0%,_#0b1b2f_42%,_#061018_100%)] px-6 pb-16 pt-32 text-white selection:bg-green-500/50">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-7rem] top-20 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
         <div className="absolute right-[-6rem] top-28 h-80 w-80 rounded-full bg-emerald-400/18 blur-3xl" />
