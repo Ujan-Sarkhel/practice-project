@@ -43,15 +43,23 @@ This project combines machine learning, backend APIs, and a modern frontend to s
 
 ## ⚙️ __System Architecture__
 
-__Frontend (Next.js)__
-↓
-__HTTP Request (POST /predict)__
-↓
-__Backend (FastAPI)__
-↓
-__ML Model (Random Forest)__
-↓
-__Prediction Response (JSON)__
+__Frontend (Next.js)__<br>
+
+↓<br>
+
+__HTTP Request (POST /predict)__<br>
+
+↓<br>
+
+__Backend (FastAPI)__<br>
+
+↓<br>
+
+__ML Model (Random Forest)__<br>
+
+↓<br>
+
+__Prediction Response (JSON)__<br>
 
 
 ---
