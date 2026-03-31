@@ -35,11 +35,13 @@ const Navbar = () => {
         </Link>
 
         {/* CTA Button */}
-        <button className="ml-4 px-5 py-2 rounded-xl bg-linear-to-r from-cyan-500 to-green-500 
-                            text-slate-950 text-sm font-bold transition-all ease-in duration-200 
-                            active:scale-95 hover:brightness-110 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
-            Contact Me
-        </button>
+        <Link href="https://github.com/Ujan-Sarkhel/practice-project.git">
+            <button className="ml-4 px-5 py-2 rounded-xl bg-linear-to-r from-cyan-500 to-green-500 
+                                text-slate-950 text-sm font-bold transition-all ease-in duration-200 
+                                active:scale-95 hover:brightness-110 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+                Github Repo
+            </button>
+        </Link>
         </div>
     </nav>
 
