@@ -26,7 +26,7 @@ export default function Page() {
   async function checkRisk(e) {
     e.preventDefault();
 
-    const res = await fetch("http://127.0.0.1:8000/predict", {
+    const res = await fetch("https://practice-project-v4en.onrender.com/predict", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
