@@ -20,12 +20,28 @@ def home():
 
 @app.post("/predict")
 def predict(data: InputData):
+    print(data)
+    if data.cases < 0:
+        return {"error": "Cases cannot be negative"}
+
+    if data.vaccination < 0 or data.vaccination > 100:
+        return {"error": "Vaccination must be between 0 and 100"}
+
+    if data.mobility < 0 or data.mobility > 100:
+        return {"error": "Mobility must be between 0 and 100"}
+
+
     score, level = predict_risk(
         data.cases, data.mobility, data.vaccination
     )
 
     return {
+    "status": "success",
+    "data": {
         "country": data.country,
         "risk_score": score,
         "risk_level": level
     }
+    }
+    
+
