@@ -1,28 +1,5 @@
 @import "tailwindcss";
 
-@keyframes title-reveal {
-  0% {
-    opacity: 0;
-    transform: translateY(18px) scale(0.96);
-    filter: blur(10px);
-    letter-spacing: 0.12em;
-  }
-
-  60% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-    letter-spacing: 0;
-  }
-}
-
-@layer utilities {
-  .animate-title-reveal {
-    animation: title-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
-    will-change: transform, opacity, filter;
-  }
+body {
+    background-color: rgb(239, 239, 239);
 }
