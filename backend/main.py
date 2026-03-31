@@ -27,8 +27,8 @@ def predict(data: InputData):
     if data.vaccination < 0 or data.vaccination > 100:
         return {"error": "Vaccination must be between 0 and 100"}
 
-    if data.mobility < 0 or data.mobility > 100:
-        return {"error": "Mobility must be between 0 and 100"}
+    if data.mobility < -20 or data.mobility > 100:
+        return {"error": "Mobility must be between -20 and 100"}
 
 
     score, level = predict_risk(
