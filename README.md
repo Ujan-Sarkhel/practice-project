@@ -152,9 +152,9 @@ http://localhost:3000
 
 * Understood deployment pipelines
 
-👥 Contributors
+## 👥 __Contributors__
 
-Backend & ML: Ujan-Sarkhel
+__Backend & ML:__ Ujan-Sarkhel
 
-Frontend: DebCoder1618
+__Frontend:__ DebCoder1618
 
