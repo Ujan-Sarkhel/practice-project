@@ -1,29 +1,68 @@
-const Form = ({ handleChange, checkRisk }) => {
+const fields = [
+  {
+    name: "country",
+    type: "text",
+    placeholder: "Enter country"
+  },
+  {
+    name: "cases",
+    type: "number",
+    placeholder: "Enter cases"
+  },
+  {
+    name: "mobility",
+    type: "number",
+    placeholder: "Enter mobility"
+  },
+  {
+    name: "vaccination",
+    type: "number",
+    placeholder: "Enter vaccination %"
+  }
+];
+
+const Form = ({ formData, handleChange, checkRisk }) => {
   return (
-<div className="rounded-[calc(1.5rem+2px)] p-0.5 bg-transparent transition-all duration-300 hover:bg-linear-to-r hover:from-cyan-500 hover:to-green-500 hover:-translate-y-1 group">
-    
-    <form 
-        className='flex flex-col gap-5 shadow-lg bg-white rounded-3xl p-8 w-105 min-h-125 justify-center items-center transition-all duration-200 ease-in group-hover:shadow-2xl' 
-        onSubmit={checkRisk}>     
-            <h1 className='text-[2.5rem] font-bold'>Form</h1>
+    <div className="rounded-[30px] border border-white/12 bg-white/8 p-1 shadow-[0_24px_80px_rgba(2,12,27,0.35)] backdrop-blur-2xl transition-transform duration-300 hover:-translate-y-1">
+      <form
+        className="flex h-full flex-col rounded-[26px] border border-white/10 bg-slate-950/30 p-8 sm:p-10"
+        onSubmit={checkRisk}
+      >
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-100/80">
+          Risk Input Form
+        </p>
+        <h2 className="mt-4 text-3xl font-semibold text-white">Run a prediction</h2>
+        <p className="mt-3 max-w-lg text-sm leading-7 text-slate-200/80">
+          Fill in the project inputs below and send them to the model. The backend will validate the data before returning a readable risk level.
+        </p>
 
-            <input name="country" type='text' placeholder='Enter Country Name' onChange={handleChange}
-                className='w-50 border-3 rounded-[30px] text-center p-1.5'></input>
+        <div className="mt-8 grid gap-4">
+          {fields.map((field) => (
+            <label key={field.name} className="grid gap-2">
+              <span className="text-sm font-medium capitalize text-slate-100">
+                {field.name}
+              </span>
+              <input
+                name={field.name}
+                type={field.type}
+                placeholder={field.placeholder}
+                value={formData[field.name]}
+                onChange={handleChange}
+                className="rounded-2xl border border-white/12 bg-white/10 px-4 py-3 text-sm text-white outline-none transition-all duration-200 placeholder:text-slate-300/45 focus:border-cyan-400/60 focus:bg-white/14 focus:shadow-[0_0_0_4px_rgba(34,211,238,0.08)]"
+              />
+            </label>
+          ))}
+        </div>
 
-            <input name="cases" type='text' placeholder='Enter Cases' onChange={handleChange}
-                className='w-50 border-3 rounded-[30px] text-center p-1.5'></input>
-
-            <input name="mobility" type='text' placeholder='Enter Mobility' onChange={handleChange} 
-                className='w-50 border-3 rounded-[30px] text-center p-1.5'></input>
-
-            <input name="vaccination" type='text' placeholder='Enter Vaccination' onChange={handleChange} 
-                className='w-50 border-3 rounded-[30px] text-center p-1.5'></input>
-            
-            <button type='submit' className='mt-2 bg-linear-to-r from-cyan-500 to-green-500 p-3 w-40 rounded-[20px] transition-all duration-300 ease-in-out hover:bg-linear-to-r hover:scale-105 hover:shadow-md active:scale-95 active:shadow-'>CHECK RISK</button>
-
-        </form>
+        <button
+          type="submit"
+          className="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-linear-to-r from-cyan-400 to-emerald-400 px-5 py-3 text-sm font-semibold tracking-[0.18em] text-slate-950 transition-all duration-300 hover:scale-[1.01] hover:brightness-110 hover:shadow-[0_12px_35px_rgba(16,185,129,0.28)] active:scale-[0.99]"
+        >
+          CHECK RISK
+        </button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;
