@@ -1,11 +1,25 @@
+import joblib
+import numpy as np
+import pandas as pd
+
+# Load once (important!)
+model = joblib.load("model.pkl")
+
 def predict_risk(cases, mobility, vaccination):
-    score = (cases / 100000) + (-mobility / 100) + (1 - vaccination / 100)
+    X = pd.DataFrame([{
+    "cases": cases,
+    "mobility": mobility,
+    "vaccination": vaccination
+    }])
     
-    if score > 1:
+    prediction = model.predict(X)[0]
+
+    # Convert to risk level
+    if prediction > 0.7:
         level = "High"
-    elif score > 0.5:
+    elif prediction > 0.4:
         level = "Medium"
     else:
         level = "Low"
 
-    return round(score, 2), level
+    return round(float(prediction), 2), level
